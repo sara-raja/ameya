@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
       <Navbar/>
       <Box sx={{backgroundColor:"#EEEDF6", padding:2}}>
-        <Typography variant="h1" align="center">Create/Edit a Participant Information</Typography>
+        <Typography variant="h1" align="center">Create/Edit a Participant Profile</Typography>
       </Box>
       <Container sx={{my:2, maxWidth:'900px', mx:'auto' }}>
         <Grid container spacing={2} direction="row" alignItems="center" justifyContent="center">
