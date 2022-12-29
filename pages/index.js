@@ -3,9 +3,25 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
+import * as React from 'react';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { Grid } from '@mui/material'
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+
 const inter = Inter({ subsets: ['latin'] })
 
+import Navbar from '../components/Navbar'
+import SwitchToggle from '../components/SwitchToggle';
+import BasicButton from'../components/BasicButtons'
+import BasicSelect from '../components/BasicSelect'
+
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -14,110 +30,74 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
+      <Navbar/>
+      <Box sx={{backgroundColor:"#EEEDF6", padding:2}}>
+        <Typography variant="h1" align="center">Create/Edit a Participant Information</Typography>
+      </Box>
+      <Container sx={{my:2, maxWidth:'900px', mx:'auto' }}>
+        <Grid container spacing={2} direction="row" alignItems="center" justifyContent="center">
+          <Grid item xs={10}>
+            <Typography variant="h2" sx={{my:2 }}>Participant Information</Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <Typography variant="body1">Ameya ID <span style={{fontWeight:'bold', marginLeft:8}}>ABC123</span></Typography>
+          </Grid>
+          <Grid item xs={10} sm={5}>
+            <TextField fullWidth id="first-name" label="First Name" variant="outlined" />
+          </Grid>
+          <Grid item xs={10} sm={5}>
+            <TextField fullWidth id="last-name" label="Last Name" variant="outlined" />
+          </Grid>
+          <Grid item xs={10} sm={10}>
+            <TextField fullWidth id="email" label="Email" variant="outlined" />
+          </Grid>
+          <Grid item xs={10} sm={4}>
+            <TextField fullWidth id="birth-date" label="Date of Birth" variant="outlined" />
+          </Grid>
+          <Grid item xs={4} sm={2}>
+            <BasicSelect
+            valueOne='+1'
+            valueTwo='+2'
+            valueThree='+3'
+            id='country-code'
+            label="Country Code"
             />
-          </div>
-        </div>
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <TextField fullWidth id="phone-number" label="Phone Number" variant="outlined" />
+          </Grid>
+          <Grid item xs={10} sm={10}>
+            <TextField fullWidth id="city" label="City" variant="outlined" />
+          </Grid>
+          <Grid item xs={5}>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+          </Grid>
+          <Grid item xs={5}>
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+          </Grid>
+          <Grid item xs={10} sm={4}>
+            <Typography>Enable 2 factor authentication <SwitchToggle/> </Typography>
+          </Grid>
+          <Grid item xs={4} sm={2}>
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <TextField fullWidth id="phone-number" label="Phone Number" variant="outlined" />
+          </Grid>
+          <Grid item xs={10} sm={10}>
+          <TextField
+            fullWidth
+            id="healt-condition-notes"
+            label="Health conditions and other notes..."
+            multiline
+            rows={4}
+            />
+          </Grid>
+          <Grid item>
+            <BasicButton/>
+          </Grid>
+        </Grid>
+      </Container>
     </>
   )
 }
