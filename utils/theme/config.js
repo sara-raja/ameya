@@ -21,7 +21,6 @@ const themeOptions = {
       },
     typography: {
         fontFamily:'Cabin',
-        // color:'#1F1769',
         h1: {
           fontSize: 24,
           fontWeight: 700,

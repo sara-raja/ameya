@@ -24,7 +24,6 @@ export default function Navbar() {
       <Typography
         variant="h1"
         color="inherit"
-        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
       >
         Ameya
       </Typography>

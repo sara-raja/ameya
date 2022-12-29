@@ -1,19 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
-
 import * as React from 'react';
+import Head from 'next/head'
+
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Grid } from '@mui/material'
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-
-const inter = Inter({ subsets: ['latin'] })
 
 import Navbar from '../components/Navbar'
 import SwitchToggle from '../components/SwitchToggle';
@@ -70,16 +62,35 @@ export default function Home() {
             <TextField fullWidth id="city" label="City" variant="outlined" />
           </Grid>
           <Grid item xs={5}>
-
+            <BasicSelect
+              valueOne='male'
+              valueTwo='female'
+              valueThree='other'
+              id='assigned-sex'
+              label="Sex Assigned at Birth"
+            />
           </Grid>
           <Grid item xs={5}>
-
+            <BasicSelect
+              valueOne='he/him'
+              valueTwo='she/her'
+              valueThree='they/them'
+              valueFour="other"
+              id='pronoun'
+              label="Preferred Pronoun"
+            />
           </Grid>
           <Grid item xs={10} sm={4}>
             <Typography>Enable 2 factor authentication <SwitchToggle/> </Typography>
           </Grid>
           <Grid item xs={4} sm={2}>
-
+            <BasicSelect
+              valueOne='+1'
+              valueTwo='+2'
+              valueThree='+3'
+              id='twof-country-code'
+              label="Country Code"
+            />
           </Grid>
           <Grid item xs={6} sm={4}>
             <TextField fullWidth id="phone-number" label="Phone Number" variant="outlined" />
