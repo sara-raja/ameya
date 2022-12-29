@@ -109,6 +109,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Container>
+      <Box sx={{mt:8, p:4, backgroundColor:"#1F1769"}}></Box>
     </>
   )
 }

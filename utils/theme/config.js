@@ -34,8 +34,7 @@ const themeOptions = {
         },
         button: {
           fontSize: 24,
-          textTransform: 'capitalize',
-          padding:'1rem 2rem',
+          textTransform: 'capitalize'
         },
       },
   };
